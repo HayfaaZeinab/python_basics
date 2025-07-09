@@ -57,3 +57,30 @@ while True:
         print("\nwrong choice ")
         break
 
+
+#Bonus task
+movies=[]
+print("Enter details of 5 movies")
+for i in range(5):
+    name=input(f"Enter name of movie {i+1}: ")
+    rating=float(input(f"Enter rating for '{name}' (1 to 10): "))
+    movies.append([name,rating])
+print(movies)
+
+for i in range(len(movies)):
+    for j in range(i+1,len(movies)):
+        if movies[i][1]<movies[j][1]:
+            movies[i],movies[j]=movies[j],movies[i]
+
+
+print("\nMovies Sorted by Rating:")
+for i in range(len(movies)):
+    print(f"{i+1}.{movies[i][0]} - {movies[i][1]}")
+
+highest = movies[0]
+lowest = movies[-1]
+
+print(f"\nHighest Rated Movie: {highest[0]} - {highest[1]}")
+print(f"Lowest Rated Movie: {lowest[0]} - {lowest[1]}")
+
+
