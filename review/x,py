@@ -1,0 +1,36 @@
+def process_students(students):
+    result=[]
+ 
+    for i in students:
+        total=i["Math"]+i["Science"]+i["English"]
+        avg=total/3
+ 
+        record={
+            "Name":i["name"],
+            "Total":total,
+            "Average":avg
+        }
+ 
+   
+        if avg>=90:
+            record["Grade"]="A"
+        elif 75 <= avg < 90:
+            record["Grade"]="B"
+        elif 60 <= avg < 75:
+            record["Grade"]="C"
+        else:
+            record["Grade"]="D"
+ 
+        result.append(record)
+ 
+    return result
+students = [
+   {"name": "Alice", "Math": 95, "Science": 85, "English": 78},
+   {"name": "Bob", "Math": 65, "Science": 70, "English": 60},
+   {"name": "Charlie", "Math": 50, "Science": 55, "English": 45}
+]
+ 
+report=process_students(students)
+ 
+for r in report:
+    print(r)
